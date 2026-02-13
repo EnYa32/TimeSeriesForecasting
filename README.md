@@ -14,13 +14,41 @@ license: mit
 
 # 📈 Sales Forecast (LightGBM)
 
-This Streamlit app predicts **`num_sold`** using a trained **LightGBM** model with time-based features and lag features.
+This project is a **Streamlit forecasting app** that predicts **`num_sold`** using a trained **LightGBM** model with:
+- **calendar features** (year/month/week/dayofweek/dayofyear, weekend)
+- **lag features** (lag_364, lag_365, lag_371)
+- **categorical inputs** (country/store/product) via saved encoders
+
+> Goal: Provide a lightweight, fast **baseline forecasting solution** with strong feature engineering and a deployable app.
+
+## 🔗 Live Demo & Code
+
+🤗 HuggingFace Space: [https://huggingface.co/spaces/EnYa32/TimeSeriesForecasting]
+
+💻 GitHub Repository: [https://github.com/EnYa32/TimeSeriesForecasting]
+
+📓 Kaggle-Wettbewerb: [https://www.kaggle.com/code/enesyama/timeseries-forecasting]
 
 ## What it does
 - Takes calendar features (year/month/week/dayofweek/dayofyear, weekend)
 - Uses lag features (lag_364, lag_365, lag_371)
 - Uses categorical inputs (country/store/product) via saved encoders
 - Outputs a `num_sold` prediction
+
+## 📊 Model Diagnostics
+
+### Residuals over Time
+![Residuals](assets/residuals_time.png)
+
+### Actual vs Predicted
+![Actual vs Predicted](assets/actual_vs_pred.png)
+
+### Residual Distribution
+![Residual Distribution](assets/residual_distribution.png)
+
+### Feature Importance
+![Feature Importance](assets/feature_importance.png)
+
 
 ## Files required (put in the repo root)
 - `app.py`
